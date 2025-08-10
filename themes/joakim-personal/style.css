@@ -1,0 +1,47 @@
+/**
+ * Theme Name:     Joakim Personal
+ * Author:         Joakim Navarro
+ * Template:       twentytwentyfive
+ * Text Domain:	   joakim-personal
+ * Description:    Twenty Twenty-Five child theme for personal uses.
+ */
+
+
+  body {
+	background: #fff;
+	background-image: linear-gradient(45deg,#ccc 25%,transparent 25%),linear-gradient(-45deg,#ccc 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#ccc 75%),linear-gradient(-45deg,transparent 75%,#ccc 75%);
+	background-size: 2px 2px;
+	background-position: 0 0,0 10px,10px -10px,-10px 0px;
+	background-attachment: fixed;
+}
+
+ .header-general {
+    width: 100%;
+ }
+
+ .menu-superior {
+    text-align: right;
+    margin-left: auto !important;
+ }
+
+ /* de entradas y páginas */
+ .contenedor-principal { 
+    background-color: rgba(255, 255, 255, 0.5);
+ } 
+
+ .pila-superior { 
+    width: 100%;
+ }
+
+ footer {
+    margin-top: auto;
+}
+
+.descripcion-header {
+    margin-left: 10px !important;
+ }
+
+@media (max-width: 992px) {
+  .descripcion-header {
+    margin-left: 0 !important;
+ }}
