@@ -1,4 +1,4 @@
-name: SSH Auto-Deploy
+name: SSH Deploy
 on:
   push:
     branches: [ "main" ]
@@ -14,14 +14,13 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Force Sync Server with Repository
+      - name: Execute SSH Command
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            git config --global pull.rebase false
             cd ~/www/wp-content
-            git fetch --all
-            git reset --hard origin/main  # Fuerza la sincronización exacta con GitHub
-            git clean -fd  # Elimina archivos no trackeados
+            git pull origin main
