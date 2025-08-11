@@ -21,5 +21,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            git config --global pull.rebase false
             cd ~/www/wp-content
             git pull origin main
